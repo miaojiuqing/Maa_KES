@@ -1,0 +1,12 @@
+{
+    "task": [
+        {
+            "name": "自动剧情",
+            "default_check": true,
+            "group": [
+                "工具"
+            ],
+            "entry": "工具-剧情跳过-任务开始层"
+        }
+    ]
+}
