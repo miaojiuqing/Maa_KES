@@ -60,7 +60,7 @@
         }
     },
     "进游戏-点击进入游戏": {
-        // "enabled": false,
+        "enabled": false,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
