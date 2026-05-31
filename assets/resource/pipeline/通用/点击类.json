@@ -33,7 +33,8 @@
                 ]
             }
         },
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 800
     },
     "通用-回首页": {
         "recognition": {

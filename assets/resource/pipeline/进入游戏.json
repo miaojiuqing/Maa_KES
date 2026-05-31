@@ -34,6 +34,8 @@
     },
     "进游戏-任务开始层": {
         "next": [
+            "[JumpBack]进游戏-点击领取签到奖励",
+            "[JumpBack]通用-点击屏幕",
             "进游戏-已进入首页",
             "[JumpBack]通用-回首页",
             "[JumpBack]通用-点击叉叉",
@@ -58,7 +60,7 @@
         }
     },
     "进游戏-点击进入游戏": {
-        "enabled": false,
+        // "enabled": false,
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -84,5 +86,22 @@
                 ]
             }
         }
+    },
+    "进游戏-点击领取签到奖励": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    481,
+                    377,
+                    670,
+                    290
+                ],
+                "template": [
+                    "进入游戏/签到奖励.png"
+                ]
+            }
+        },
+        "action": "Click"
     }
 }
