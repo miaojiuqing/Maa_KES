@@ -16,6 +16,42 @@
         },
         "action": "Click"
     },
+    "通用-点击叉叉": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    929,
+                    0,
+                    351,
+                    217
+                ],
+                "template": [
+                    "通用/交互按钮/叉叉.png",
+                    "通用/交互按钮/叉叉2.png",
+                    "通用/交互按钮/叉叉3.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
+    "通用-回首页": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    929,
+                    0,
+                    351,
+                    217
+                ],
+                "template": [
+                    "通用/交互按钮/回首页.png"
+                ]
+            }
+        },
+        "action": "Click"
+    },
     "通用-点击返回": {
         "recognition": {
             "type": "TemplateMatch",

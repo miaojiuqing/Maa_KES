@@ -1,0 +1,22 @@
+{
+    "菜单点击-唤出菜单": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    1181,
+                    0,
+                    98,
+                    89
+                ],
+                "template": [
+                    "通用/首页处按钮/菜单唤出.png",
+                    "通用/菜单处按钮/唤出菜单.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000
+    }
+}

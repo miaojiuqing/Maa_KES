@@ -11,7 +11,8 @@
             "description": "来点试验想法",
             "option": [
                 "领奖-日常活跃奖励",
-                "领奖-阿基亚农补给"
+                "领奖-阿基亚农补给",
+                "领奖-邮箱"
             ]
         }
     ],
@@ -54,6 +55,28 @@
                     "name": "No",
                     "pipeline_override": {
                         "领奖-补给-任务开始层": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "领奖-邮箱": {
+            "label": "邮箱",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "领奖-邮箱-任务开始层": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "领奖-邮箱-任务开始层": {
                             "enabled": false
                         }
                     }
