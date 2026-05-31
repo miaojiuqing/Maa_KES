@@ -214,6 +214,7 @@
                 {
                     "name": "日常-清体力-成长刷取选择-单元币",
                     "label": "单元币",
+                    "icon": "./resource/image/图标/养成材料/单元币.png",
                     "pipeline_override": {
                         "清体力-成长-刷取选择接口": {
                             "template": [
@@ -225,6 +226,7 @@
                 {
                     "name": "日常-清体力-成长刷取选择-主战员升级材料",
                     "label": "主战员升级材料",
+                    "icon": "./resource/image/图标/养成材料/主战升级.png",
                     "pipeline_override": {
                         "清体力-成长-刷取选择接口": {
                             "template": [
@@ -236,6 +238,7 @@
                 {
                     "name": "日常-清体力-成长刷取选择-辅战员升级材料",
                     "label": "辅战员升级材料",
+                    "icon": "./resource/image/图标/养成材料/辅战升级.png",
                     "pipeline_override": {
                         "清体力-成长-刷取选择接口": {
                             "template": [
