@@ -1,4 +1,4 @@
-# 发布时由 CI 自动生成，参见 .github/workflows/install.yml
+# 由 CI 自动生成
 pkgbase = maa-kes
 	pkgdesc = 卡厄思梦境自动化助手 - MaaFramework 图像识别挂机工具
 	pkgver = @VERSION@
@@ -31,3 +31,4 @@ pkgbase = maa-kes
 	sha256sums = 8ac724ebbdf22ec5a252f3786cef221ff3263c65c3fe66894b9be801fb56e2c3
 
 pkgname = maa-kes
+# 由 CI 自动生成如上

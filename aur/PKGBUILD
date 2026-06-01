@@ -1,8 +1,6 @@
+# 由 CI 自动生成
 # Maintainer: aklnaaw https://github.com/aklnaaw
 # Contributor: miaojiuqing (Maa_KES upstream) https://github.com/miaojiuqing
-#
-# 发布时由 CI 自动生成：aur/PKGBUILD → @VERSION@/@SHA256SUM_LINUX@ 被替换
-# 参见 .github/workflows/install.yml 中的 Generate AUR tarball 步骤
 
 pkgname=maa-kes
 pkgver=@VERSION@
@@ -78,3 +76,4 @@ package() {
     install -Dm755 "${srcdir}/maa-kes.sh" "${pkgdir}/usr/bin/maa-kes"
     install -Dm644 "${srcdir}/maa-kes.desktop" "${pkgdir}/usr/share/applications/maa-kes.desktop"
 }
+# 由 CI 自动生成如上

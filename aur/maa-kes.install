@@ -1,4 +1,4 @@
-# 发布时由 CI 替换 @VERSION@，参见 .github/workflows/install.yml
+# 由 CI 替换版本号
 post_install() {
     echo "================================================"
     echo "  Maa_KES v@VERSION@ 已安装"
@@ -28,3 +28,4 @@ pre_remove() {
 post_remove() {
     true
 }
+# 由 CI 替换版本号如上
