@@ -148,6 +148,7 @@
         "post_delay": 800
     },
     "日常-政策-新关卡解锁": {
+        //直接跳转去打，打完回来
         "recognition": {
             "type": "TemplateMatch",
             "param": {
