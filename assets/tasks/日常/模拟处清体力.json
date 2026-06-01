@@ -656,8 +656,8 @@
                 {
                     "name": "日常-清体力-挑战刷取选择-哀嚎的浪子",
                     "label": "哀嚎的浪子",
-                    "icon": "./resource/image/日常/清体力/周本挑战/BOSS头像/哀嚎的浪子.png",
-                    "description": "./resource/image/图标/养成材料/周本掉落/哀嚎的浪子之瞳.png",
+                    "icon": "./resource/image/图标/养成材料/周本掉落/哀嚎的浪子之瞳.png",
+                    // "description": "./resource/image/图标/养成材料/周本掉落/哀嚎的浪子之瞳.png",
                     "pipeline_override": {
                         "清体力-挑战-刷取选择接口": {
                             "template": [
@@ -670,8 +670,8 @@
                 {
                     "name": "日常-清体力-挑战刷取选择-直面恐惧",
                     "label": "直面恐惧",
-                    "icon": "./resource/image/日常/清体力/周本挑战/BOSS头像/直面恐惧.png",
-                    "description": "./resource/image/图标/养成材料/周本掉落/谴责碎片.png",
+                    "icon": "./resource/image/图标/养成材料/周本掉落/谴责碎片.png",
+                    // "description": "./resource/image/图标/养成材料/周本掉落/谴责碎片.png",
                     "pipeline_override": {
                         "清体力-挑战-刷取选择接口": {
                             "template": [
