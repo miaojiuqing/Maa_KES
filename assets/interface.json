@@ -5,6 +5,7 @@
     "contact": "QQ群: 437587416",
     "license": "MIT",
     "welcome": "维若妮卡已就位！",
+    "icon": "./resource/image/logo.png",
     "github": "https://github.com/miaojiuqing/Maa_KES",
     "version": "1.0.0",
     "controller": [
