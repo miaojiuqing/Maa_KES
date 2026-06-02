@@ -1,0 +1,44 @@
+{
+    "task": [
+        {
+            "name": "工具-梦讯红点清除",
+            "label": "梦讯红点清除",
+            "icon": "./resource/image/单线程工具/手机消息/图标.png",
+            "default_check": false,
+            "group": [
+                "工具"
+            ],
+            "entry": "工具-读消息-任务开始层",
+            "description": "会自己过掉好感度剧情",
+            "option": [
+                "工具-梦讯红点清除-加速对话过程"
+            ]
+        }
+    ],
+    "option": {
+        "工具-梦讯红点清除-加速对话过程": {
+            "label": "加速对话过程",
+            "description": "开启后会通过点击空白处加速对话过程",
+            "type": "switch",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "工具-读消息-消息列表-已展开对话-加速剧情": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "工具-读消息-消息列表-已展开对话-加速剧情": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
