@@ -1,0 +1,185 @@
+{
+    "出击-选角-已进入角色选择界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    755,
+                    0,
+                    94,
+                    99
+                ],
+                "template": [
+                    "日常/出击/选角色/已进入界面.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-选角-属性筛选-寻找对应属性位置"
+        ]
+    },
+    "出击-选角-已进入筛选": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    882,
+                    40,
+                    76,
+                    81
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/已进入筛选界面.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    907,
+                    64,
+                    156,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "出击-选角-条件清理完毕",
+            "出击-选角-条件未清理完毕"
+        ]
+    },
+    "出击-选角-点击筛选": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    834,
+                    0,
+                    87,
+                    84
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/筛选入口.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "出击-选角-条件清理完毕": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    364,
+                    137,
+                    702,
+                    301
+                ],
+                "upper": [
+                    210,
+                    210,
+                    210
+                ],
+                "lower": [
+                    210,
+                    210,
+                    210
+                ],
+                "count": 86520
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "筛选条件已清理完毕"
+        },
+        "next": [
+            "出击-选角-已选中-前锋",
+            "[JumpBack]出击-选角-点击选择-前锋"
+        ]
+    },
+    "出击-选角-条件未清理完毕": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    364,
+                    137,
+                    702,
+                    301
+                ],
+                "upper": [
+                    74,
+                    74,
+                    74
+                ],
+                "lower": [
+                    74,
+                    74,
+                    74
+                ],
+                "count": 5000
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    907,
+                    64,
+                    156,
+                    33
+                ]
+            }
+        },
+        "next": [
+            "出击-选角-条件清理完毕",
+            "出击-选角-条件未清理完毕"
+        ]
+    },
+    "出击-选角-筛选完毕-已回到角色选择界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    755,
+                    0,
+                    94,
+                    99
+                ],
+                "template": [
+                    "日常/出击/选角色/已进入界面.png"
+                ]
+            }
+        },
+        "next": []
+    },
+    "出击-选角色-筛选完毕-点击启用筛选": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    636,
+                    595,
+                    89,
+                    88
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/启用筛选.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    753,
+                    623,
+                    239,
+                    35
+                ]
+            }
+        }
+    }
+}

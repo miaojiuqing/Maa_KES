@@ -1,0 +1,242 @@
+{
+    "出击-任务开始层": {},
+    "出击-总任务层": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    231,
+                    100,
+                    75
+                ],
+                "template": [
+                    "进入游戏/已处于首页.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-已进入出击界面",
+            "[JumpBack]首页点击-出击"
+        ]
+    },
+    "出击-已进入出击界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    18,
+                    499,
+                    76,
+                    89
+                ],
+                "template": [
+                    "日常/出击/已进入界面.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-已选中所选难度",
+            "[JumpBack]出击-点击切换难度++"
+        ]
+    },
+    "出击-已选中所选难度": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    579,
+                    319,
+                    121,
+                    116
+                ],
+                "template": [
+                    "日常/出击/难度选择/难度1.png"
+                ]
+            }
+        },
+        "next": [
+            "出击-当前难度已解锁",
+            "出击-当前难度未解锁"
+        ]
+    },
+    //想做一个复杂的难度切换功能
+    "出击-点击切换难度++": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    827,
+                    285,
+                    107,
+                    150
+                ],
+                "template": [
+                    "日常/出击/难度选择/难度++.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "出击-当前难度未解锁": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    763,
+                    610,
+                    77,
+                    80
+                ],
+                "template": [
+                    "日常/出击/难度选择/当前难度未解锁.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "当前难度未解锁,将降低难度",
+            "Node.Click.Succeeded": "难度⬇⬇"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    389,
+                    336,
+                    35,
+                    49
+                ]
+            }
+        },
+        "post_delay": 1500,
+        "next": [
+            "出击-当前难度已解锁",
+            "出击-当前难度未解锁"
+        ]
+    },
+    "出击-当前难度已解锁": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    437,
+                    603,
+                    430,
+                    92
+                ],
+                "upper": [
+                    253,
+                    252,
+                    255
+                ],
+                "lower": [
+                    109,
+                    94,
+                    201
+                ],
+                "count": 10000
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已切换至解锁难度"
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    476,
+                    629,
+                    322,
+                    42
+                ]
+            }
+        },
+        "next": [
+            "出击-已进入编队界面",
+            "出击-当前难度已解锁"
+        ]
+    },
+    "出击-已进入编队界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    742,
+                    0,
+                    86,
+                    85
+                ],
+                "template": [
+                    "日常/出击/已进入编队.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "开始检查硬核状态"
+        },
+        "next": [
+            "出击-已选中所需硬核状态",
+            "[JumpBack]出击-点击切换当前硬核状态"
+        ]
+    },
+    "出击-已选中所需硬核状态": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    801,
+                    7,
+                    103,
+                    64
+                ],
+                "template": [
+                    "日常/出击/硬核模式已关闭.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "已关闭硬核模式"
+        },
+        "next": [
+            "出击-选角-当前未选中角色"
+        ]
+    },
+    "出击-点击切换当前硬核状态": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    801,
+                    7,
+                    103,
+                    64
+                ],
+                "template": [
+                    "日常/出击/硬核模式已开启.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 1600
+    },
+    "出击-选角-当前未选中角色": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    362,
+                    273,
+                    148,
+                    149
+                ],
+                "template": [
+                    "日常/出击/选角色/未配置角色_1.png",
+                    "日常/出击/选角色/未配置角色_2.png"
+                ]
+            }
+        },
+        "action": "Click"
+    }
+}

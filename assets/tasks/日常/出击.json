@@ -1,0 +1,574 @@
+{
+    "task": [
+        {
+            "name": "出击",
+            "label": "出击",
+            "icon": "./resource/image/图标/任务图标/出击.png",
+            "entry": "出击-任务开始层",
+            "group": [
+                "日常"
+            ],
+            "option": [
+                "出击-难度选择",
+                "出击-硬核模式",
+                "出击-角色筛选"
+            ]
+        }
+    ],
+    "option": {
+        "出击-难度选择": {
+            "label": "难度选择",
+            "type": "select",
+            "default_case": "出击-难度选择-不切换",
+            "cases": [
+                {
+                    "name": "出击-难度选择-不切换",
+                    "label": "不切换",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                },
+                {
+                    "name": "出击-难度选择-难度1",
+                    "label": "I",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "template": [
+                                "日常/出击/难度选择/难度1.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击-难度选择-难度2",
+                    "label": "II",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "template": [
+                                "日常/出击/难度选择/难度2.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击-难度选择-难度3",
+                    "label": "III",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "template": [
+                                "日常/出击/难度选择/难度3.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击-难度选择-难度4",
+                    "label": "IV",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "template": [
+                                "日常/出击/难度选择/难度4.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击-难度选择-难度5",
+                    "label": "V",
+                    "pipeline_override": {
+                        "出击-已选中所选难度": {
+                            "template": [
+                                "日常/出击/难度选择/难度5.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-硬核模式": {
+            "label": "硬核模式",
+            "type": "switch",
+            "icon": "./resource/image/日常/出击/图标/硬核模式.png",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-已选中所需硬核状态": {
+                            "focus": {
+                                "Node.Recognition.Succeeded": "已开启硬核模式"
+                            },
+                            "template": [
+                                "日常/出击/硬核模式已开启.png"
+                            ]
+                        },
+                        "出击-点击切换当前硬核状态": {
+                            "template": [
+                                "日常/出击/硬核模式已关闭.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-已选中所需硬核状态": {
+                            "focus": {
+                                "Node.Recognition.Succeeded": "已关闭硬核模式"
+                            },
+                            "template": [
+                                "日常/出击/硬核模式已关闭.png"
+                            ]
+                        },
+                        "出击-点击切换当前硬核状态": {
+                            "template": [
+                                "日常/出击/硬核模式已开启.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选": {
+            "type": "switch",
+            "label": "角色筛选",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已进入角色选择界面": {
+                            "next": [
+                                "出击-选角-属性筛选-寻找对应属性位置"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "出击-角色筛选-属性",
+                        "出击-角色筛选-更细的筛选"
+                    ]
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已进入角色选择界面": {
+                            "next": [
+                                "出击-选角-筛选完毕-已回到角色选择界面"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-属性": {
+            "label": "属性选择",
+            "type": "select",
+            "default_case": "出击角色属性选择-ALL",
+            "cases": [
+                {
+                    "name": "出击角色属性选择-ALL",
+                    "label": "ALL",
+                    "icon": "./resource/image/图标/属性/ALL.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/ALL.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击角色属性选择-热情",
+                    "label": "热情",
+                    "icon": "./resource/image/图标/属性/热情.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/热情.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击角色属性选择-正义",
+                    "label": "正义",
+                    "icon": "./resource/image/图标/属性/正义.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/正义.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击角色属性选择-秩序",
+                    "label": "秩序",
+                    "icon": "./resource/image/图标/属性/秩序.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/秩序.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击角色属性选择-本能",
+                    "label": "本能",
+                    "icon": "./resource/image/图标/属性/本能.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/本能.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "出击角色属性选择-虚无",
+                    "label": "虚无",
+                    "icon": "./resource/image/图标/属性/虚无.png",
+                    "pipeline_override": {
+                        "出击-选角-属性筛选-寻找对应属性位置": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/属性/虚无.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选": {
+            "label": "更细的筛选",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "出击-角色筛选-更细的筛选-根据职业",
+                    "label": "职业",
+                    "option": [
+                        "出击-角色筛选-更细的筛选-根据职业-前锋",
+                        "出击-角色筛选-更细的筛选-根据职业-守卫",
+                        "出击-角色筛选-更细的筛选-根据职业-游侠",
+                        "出击-角色筛选-更细的筛选-根据职业-猎人",
+                        "出击-角色筛选-更细的筛选-根据职业-奥义师",
+                        "出击-角色筛选-更细的筛选-根据职业-操控师"
+                    ]
+                },
+                {
+                    "name": "出击-角色筛选-更细的筛选-根据势力",
+                    "label": "势力",
+                    "option": [
+                        "出击-角色筛选-更细的筛选-根据势力-希安联邦",
+                        "出击-角色筛选-更细的筛选-根据势力-铁巷联盟",
+                        "出击-角色筛选-更细的筛选-根据势力-恒星家族",
+                        "出击-角色筛选-更细的筛选-根据势力-帕尔律社",
+                        "出击-角色筛选-更细的筛选-根据势力-晨曦会",
+                        "出击-角色筛选-更细的筛选-根据势力-流浪者"
+                    ]
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-前锋": {
+            "label": "前锋",
+            "icon": "./resource/image/图标/职业分支/前锋.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-前锋": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/前锋-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-前锋": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-守卫": {
+            "label": "守卫",
+            "icon": "./resource/image/图标/职业分支/守卫.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-守卫": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/守卫-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-守卫": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-游侠": {
+            "label": "游侠",
+            "icon": "./resource/image/图标/职业分支/游侠.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-游侠": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/游侠-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-游侠": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-猎人": {
+            "label": "猎人",
+            "icon": "./resource/image/图标/职业分支/猎人.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-猎人": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/猎人-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-猎人": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-奥义师": {
+            "label": "奥义师",
+            "icon": "./resource/image/图标/职业分支/奥义师.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-奥义师": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/奥义师-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-奥义师": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据职业-操控师": {
+            "label": "操控师",
+            "icon": "./resource/image/图标/职业分支/操控师.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-操控师": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/职业/操控师-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-操控师": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-希安联邦": {
+            "label": "希安联邦",
+            "icon": "./resource/image/图标/势力/希安联邦.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-希安联邦": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/希安联邦-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-希安联邦": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-铁巷联盟": {
+            "label": "铁巷联盟",
+            "icon": "./resource/image/图标/势力/铁巷联盟.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-铁巷联盟": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/铁巷联盟-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-铁巷联盟": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-恒星家族": {
+            "label": "恒星家族",
+            "icon": "./resource/image/图标/势力/恒星家族.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-恒星家族": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/恒星家族-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-恒星家族": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-帕尔律社": {
+            "label": "帕尔律社",
+            "icon": "./resource/image/图标/势力/帕尔律社.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-帕尔律社": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/帕尔律社-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-帕尔律社": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-晨曦会": {
+            "label": "晨曦会",
+            "icon": "./resource/image/图标/势力/晨曦会.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-晨曦会": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/晨曦会-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-晨曦会": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        },
+        "出击-角色筛选-更细的筛选-根据势力-流浪者": {
+            "label": "流浪者",
+            "icon": "./resource/image/图标/势力/流浪者.png",
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "出击-选角-已选中-流浪者": {
+                            "template": [
+                                "日常/出击/选角色/筛选/条件/势力/流浪者-已选中.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "出击-选角-已选中-流浪者": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

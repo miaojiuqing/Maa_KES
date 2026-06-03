@@ -1,0 +1,238 @@
+{
+    "出击-选角-已选中-前锋": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    371,
+                    131,
+                    69,
+                    71
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/前锋-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-守卫",
+            "[JumpBack]出击-选角-点击选择-守卫"
+        ]
+    },
+    "出击-选角-点击选择-前锋": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    371,
+                    131,
+                    69,
+                    71
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/前锋-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-守卫": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    139,
+                    56,
+                    53
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/守卫-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-游侠",
+            "[JumpBack]出击-选角-点击选择-游侠"
+        ]
+    },
+    "出击-选角-点击选择-守卫": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    139,
+                    56,
+                    53
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/守卫-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-游侠": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    832,
+                    133,
+                    65,
+                    71
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/游侠-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-猎人",
+            "[JumpBack]出击-选角-点击选择-猎人"
+        ]
+    },
+    "出击-选角-点击选择-游侠": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    832,
+                    133,
+                    65,
+                    71
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/游侠-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-猎人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    378,
+                    208,
+                    55,
+                    50
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/猎人-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-奥义师",
+            "[JumpBack]出击-选角-点击选择-奥义师"
+        ]
+    },
+    "出击-选角-点击选择-猎人": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    378,
+                    208,
+                    55,
+                    50
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/猎人-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-奥义师": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    607,
+                    208,
+                    54,
+                    52
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/奥义师-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-操控师",
+            "[JumpBack]出击-选角-点击选择-操控师"
+        ]
+    },
+    "出击-选角-点击选择-奥义师": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    607,
+                    208,
+                    54,
+                    52
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/奥义师-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-操控师": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    839,
+                    210,
+                    47,
+                    48
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/操控师-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-希安联邦",
+            "[JumpBack]出击-选角-点击选择-希安联邦"
+            // "出击-选角-筛选完毕-已回到角色选择界面",
+            // "[JumpBack]出击-选角色-筛选完毕-点击启用筛选"
+        ]
+    },
+    "出击-选角-点击选择-操控师": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    839,
+                    210,
+                    47,
+                    48
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/职业/操控师-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    }
+}

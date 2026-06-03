@@ -1,0 +1,236 @@
+{
+    "出击-选角-已选中-希安联邦": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    380,
+                    305,
+                    50,
+                    56
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/希安联邦-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-铁巷联盟",
+            "[JumpBack]出击-选角-点击选择-铁巷联盟"
+        ]
+    },
+    "出击-选角-点击选择-希安联邦": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    380,
+                    305,
+                    50,
+                    56
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/希安联邦-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-铁巷联盟": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    305,
+                    54,
+                    55
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/铁巷联盟-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-恒星家族",
+            "[JumpBack]出击-选角-点击选择-恒星家族"
+        ]
+    },
+    "出击-选角-点击选择-铁巷联盟": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    305,
+                    54,
+                    55
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/铁巷联盟-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-恒星家族": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    835,
+                    305,
+                    55,
+                    61
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/恒星家族-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-帕尔律社",
+            "[JumpBack]出击-选角-点击选择-帕尔律社"
+        ]
+    },
+    "出击-选角-点击选择-恒星家族": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    835,
+                    305,
+                    55,
+                    61
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/恒星家族-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-帕尔律社": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    378,
+                    373,
+                    55,
+                    55
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/帕尔律社-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-晨曦会",
+            "[JumpBack]出击-选角-点击选择-晨曦会"
+        ]
+    },
+    "出击-选角-点击选择-帕尔律社": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    378,
+                    373,
+                    55,
+                    55
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/帕尔律社-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-晨曦会": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    375,
+                    56,
+                    49
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/晨曦会-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-已选中-流浪者",
+            "[JumpBack]出击-选角-点击选择-流浪者"
+        ]
+    },
+    "出击-选角-点击选择-晨曦会": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    609,
+                    375,
+                    56,
+                    49
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/晨曦会-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    },
+    "出击-选角-已选中-流浪者": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    834,
+                    372,
+                    62,
+                    58
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/流浪者-已选中.png"
+                ]
+            }
+        },
+        "rate_limit": 200,
+        "next": [
+            "出击-选角-筛选完毕-已回到角色选择界面",
+            "[JumpBack]出击-选角色-筛选完毕-点击启用筛选"
+        ]
+    },
+    "出击-选角-点击选择-流浪者": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    834,
+                    372,
+                    62,
+                    58
+                ],
+                "template": [
+                    "日常/出击/选角色/筛选/条件/势力/流浪者-未选中.png"
+                ]
+            }
+        },
+        "action": "Click",
+        "post_delay": 500
+    }
+}
