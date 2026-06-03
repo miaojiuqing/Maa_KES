@@ -25,7 +25,12 @@
             "cases": [
                 {
                     "name": "出击战斗策略-进去就退",
-                    "label": "进去就退",
+                    "label": "没做接口",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "出击战斗策略-尝试打完第一面",
+                    "label": "尝试打完第一面",
                     "pipeline_override": {}
                 }
             ]
