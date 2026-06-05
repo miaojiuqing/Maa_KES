@@ -55,6 +55,9 @@
                 ]
             }
         },
+        "focus": {
+            "Node.Recognition.Succeeded": "关卡打完啦~剧情卡厄思暂不支持~"
+        },
         "action": "Click",
         "next": [
             "工具-自动推图-可点击进入关卡",
