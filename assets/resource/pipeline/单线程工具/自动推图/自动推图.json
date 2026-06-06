@@ -135,15 +135,18 @@
             "type": "TemplateMatch",
             "param": {
                 "roi": [
-                    719,
-                    620,
-                    550,
-                    86
+                    64,
+                    72,
+                    97,
+                    87
                 ],
                 "template": [
-                    "单线程工具/自动推图/通关啦.png"
+                    "单线程工具/自动推图/战斗任务/战斗成功.png"
                 ]
             }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "通过一关!🎉"
         },
         "action": {
             "type": "Click",
@@ -155,6 +158,31 @@
                     32
                 ]
             }
+        },
+        "next": [
+            "工具-自动推图-总任务层",
+            "工具-自动推图-关卡已结束",
+            "[JumpBack]黑屏计数",
+            "[JumpBack]通用-点击屏幕"
+        ]
+    },
+    "工具-自动推图-关卡已结束-战斗失败": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    292,
+                    472,
+                    181,
+                    84
+                ],
+                "template": [
+                    "单线程工具/自动推图/战斗任务/战斗失败.png"
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗失败T^T"
         },
         "next": [
             "工具-自动推图-总任务层",
