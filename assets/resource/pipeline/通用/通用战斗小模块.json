@@ -1,0 +1,363 @@
+{
+    "1测": { //启动手动战斗模式
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1090,
+                    2,
+                    69,
+                    73
+                ],
+                "template": [
+                    "战斗/战斗状态/不可自动战斗.png"
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]通用战斗-检查怪物位置",
+            "[JumpBack]通用战斗-手中仍有可用卡牌",
+            "通用战斗-检查不到怪物"
+        ]
+    },
+    "通用战斗-检查怪物位置": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    0
+                ]
+            }
+        },
+        "next": [
+            "通用战斗-检查卡牌位置_崩溃",
+            "通用战斗-检查卡牌位置_强化",
+            "通用战斗-检查卡牌位置_技能",
+            "通用战斗-检查卡牌位置_攻击",
+            "通用战斗-检查卡牌位置_异常",
+            "通用战斗-检查卡牌位置_诅咒",
+            "通用战斗-检查不到怪物",
+            "通用战斗-费用消耗至0"
+        ]
+    },
+    "通用战斗-费用消耗至0": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "green_mask": true,
+                "roi": [
+                    599,
+                    626,
+                    82,
+                    93
+                ],
+                "template": [
+                    "战斗/卡牌识别/0费了.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1110,
+                    598,
+                    57,
+                    54
+                ]
+            }
+        },
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物",
+            "通用战斗-费用消耗至0"
+        ]
+    },
+    "通用战斗-手中仍有可用卡牌": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    515,
+                    224,
+                    236,
+                    67
+                ],
+                "template": [
+                    "战斗/仍有可用卡牌.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    324,
+                    421,
+                    228,
+                    32
+                ]
+            }
+        },
+        "post_delay": 1500
+    },
+    "通用战斗-检查不到怪物": {
+        "inverse": true,
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "model": "battle.onnx",
+                "labels": [
+                    "monster", //怪物_0
+                    "kp_Attack", //攻击_1
+                    "kp_better", //强化_2
+                    "kp_skill", //技能_3
+                    "kp_curse", //诅咒_4
+                    "kp_san", //崩溃_5
+                    "kp_abnormal" //异常_6
+                ],
+                "expected": [
+                    0
+                ]
+            }
+        }
+    },
+    "通用战斗-检查卡牌位置_攻击": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    1
+                ]
+            }
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_攻击",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张攻击卡牌"
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ]
+    },
+    "通用战斗-检查卡牌位置_强化": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    2
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张强化卡牌"
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_强化",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ]
+    },
+    "通用战斗-检查卡牌位置_技能": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    3
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张技能卡牌"
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_技能",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "通用战斗-检查卡牌位置_诅咒": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    4
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张诅咒卡牌"
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_诅咒",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "通用战斗-检查卡牌位置_崩溃": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    5
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张崩溃卡牌"
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_崩溃",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        }
+    },
+    "通用战斗-检查卡牌位置_异常": {
+        "recognition": {
+            "type": "NeuralNetworkDetect",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    612
+                ],
+                "model": "battle.onnx",
+                "expected": [
+                    6
+                ]
+            }
+        },
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试发动一张异常卡牌"
+        },
+        "post_delay": 500,
+        "next": [
+            "通用战斗-检查怪物位置",
+            "通用战斗-检查不到怪物"
+        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": "通用战斗-检查卡牌位置_异常",
+                "end": "通用战斗-检查怪物位置",
+                "end_offset": [
+                    0,
+                    20,
+                    1,
+                    1
+                ]
+            }
+        }
+    }
+}
